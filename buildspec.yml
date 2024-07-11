@@ -19,7 +19,6 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo pushing to repo
-      - docker push flask_app:latest
       - docker push flask_app:$IMAGE_TAG
       - echo Writing image definitions file...
       # Give your container name
