@@ -9,13 +9,14 @@ phases:
 
   build:
     commands:
-      - docker build -t flask_app:latest .
+      - docker build -t flask_app .
+      - docker tag flask_app:latest 056374430480.dkr.ecr.ap-south-1.amazonaws.com/flask_app:latest
       # Replace $IMAGE_REPO_NAME with your ECR repository name
       # Replace $CODEBUILD_RESOLVED_SOURCE_VERSION with a tag or commit ID
 
   post_build:
     commands:
-      - docker push flask_app:latest
+      - docker push 056374430480.dkr.ecr.ap-south-1.amazonaws.com/flask_app:latest
       # Push the Docker image to ECR repository
 
 artifacts:
