@@ -18,7 +18,7 @@ phases:
     commands:
       - docker push 056374430480.dkr.ecr.ap-south-1.amazonaws.com/flask_app:latest
       # Push the Docker image to ECR repository
-      - ContainerName="container-name"
+      - ContainerName="flask_app"
       - ImageURI=$(cat imageDetail.json | jq -r '.ImageURI')
       - printf '[{"name":"CONTAINER_NAME","imageUri":"IMAGE_URI"}]' > imagedefinitions.json
       - sed -i -e "s|CONTAINER_NAME|$ContainerName|g" imagedefinitions.json
